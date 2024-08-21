@@ -1,14 +1,14 @@
-.intro {
-    margin-bottom: 175px;
+// .intro {
+//     margin-bottom: 175px;
 
-    @include md {
-        margin-bottom: 100px;
-    }
+//     @include md {
+//         margin-bottom: 100px;
+//     }
 
-    @include xs {
-        margin-bottom: 90px;
-    }
-}
+//     @include xs {
+//         margin-bottom: 90px;
+//     }
+// }
 
 .intro__container {
     position: relative;
@@ -19,7 +19,7 @@
         content: "";
         display: block;
         width: 100%;
-        padding-top: 38.85%;
+        padding-top: 43.8%;
 
         @include xxs {
             padding-top: 128.5%;

@@ -1,10 +1,12 @@
-.feedback {
+.form {
     position: relative;
-    padding: 56px 0 78px;
+    z-index: 2;
+    padding: 44px 91px 60px;
     background-color: var(--color-green-bg, #40a22b);
     background: $gradient_bg;
     color: var(--color-white-fc, #fcfcfc);
     overflow: hidden;
+    transform: translateY(-30%);
 
     input,
     button {
@@ -20,60 +22,84 @@
         color: inherit;
     }
 
+    @include xl {
+        padding: 32px 40px 50px;
+        transform: translateY(-20%);
+    }
+
     @include sm {
-        padding-bottom: 400px;
+        transform: translateY(-5%);
     }
 
     @include xxs {
-        padding-bottom: 360px;
+        padding: 32px 20px 49px;
     }
 }
 
-.feedback__title {
-    margin: 0 0 42px 0;
+.form__title {
+    margin: 0 0 12px 0;
+    font-weight: 600;
+    font-size: 40px;
     line-height: 108%;
 
+    @include lg {
+        font-size: 34px;
+    }
+
+    @include sm {
+        font-size: 28px;
+    }
+
     @include xs {
-        margin: 0 0 15px 0;
-        line-height: 116%;
+        margin: 0 0 8px 0;
     }
 }
 
-.feedback__subtitle {
-    margin: 0 0 47px 0;
+.form__subtitle {
+    margin: 0 0 32px 0;
     font-weight: 400;
     font-size: 30px;
     line-height: 116%;
 
     @include md {
-        margin-bottom: 42px;
-        font-size: 25px;
+        font-size: 24px;
     }
 
     @include xs {
-        margin-bottom: 37px;
-        font-size: 20px;
+        margin-bottom: 13px;
+        font-size: 18px;
     }
 }
 
-.feedback__form {
-    max-width: 1050px;
-    margin-bottom: 19px;
+.form__form {
+    display: flex;
+    gap: 0 55px;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 42px;
+
+    @include xl {
+        gap: 0 30px;
+    }
+
+    @include sm {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 26px 0;
+        margin-bottom: 30px;
+    }
 
     @include xs {
         margin-bottom: 13px;
     }
 }
 
-.feedback__input {
+.form__input {
     display: block;
     width: 100%;
-    max-width: 592px;
-    height: 62px;
-    margin-bottom: 29px;
-
+    height: 52px;
     font-weight: 400;
-    font-size: 25px;
+    font-size: 20px;
     line-height: 128%;
     letter-spacing: -0.03em;
     border: none;
@@ -85,12 +111,14 @@
     }
 
     @include md {
-        height: 52px;
         display: flex;
         align-items: center;
         justify-content: flex-start;
-        margin-bottom: 30px;
         font-size: 20px;
+    }
+
+    @include sm {
+        max-width: 550px;
     }
 
     @include xs {
@@ -100,14 +128,14 @@
     }
 }
 
-.feedback__submit {
+.form__submit {
+    flex: 0 0 432px;
     display: block;
-    min-width: 446px;
-    min-height: 62px;
-    margin-top: 63px;
+    min-width: 432px;
+    min-height: 57px;
     padding: 9px 28px 14px;
     font-weight: 600;
-    font-size: 30px;
+    font-size: 25px;
     line-height: 116%;
     text-align: center;
     border: 1px solid var(--color-white-fc, #fcfcfc);
@@ -121,13 +149,19 @@
         }
     }
 
-    @include md {
-        margin-top: 40px;
-        font-size: 25px;
+    @include lg {
+        flex: 0 0 320px;
+        min-width: 320px;
+        font-size: 20px;
+    }
+
+    @include sm {
+        flex: unset;
     }
 
     @include xs {
         width: 100%;
+        margin-top: 13px;
         padding: 8px 20px;
         display: flex;
         justify-content: center;
@@ -142,8 +176,7 @@
     }
 }
 
-.feedback__policy {
-    max-width: 446px;
+.form__policy {
     margin: 0;
     font-weight: 400;
     font-size: 16px;
@@ -157,7 +190,7 @@
     }
 }
 
-.feedback__show {
+.form__show {
     border: none;
     cursor: pointer;
     text-decoration: underline;
@@ -169,7 +202,7 @@
     }
 }
 
-.feedback__bg {
+.form__bg {
     position: absolute;
     // top: 50%;
     bottom: 0;
