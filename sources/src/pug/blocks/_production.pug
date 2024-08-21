@@ -1,0 +1,17 @@
+section.production.section
+    .container 
+        h2.production__title.section__title Производство настоящих итальянских котлов
+
+    .production__container
+
+        .production__wrapper
+            .production__preview.video-preview
+                button.production__btn.video-play-btn(type="button" aria-label="Начать показ видео")
+                    include ./icon_play.pug
+                +pictureSizeLazy('production/production_preview', 'jpg', 'x2', 1500, 840)
+                .preview__descr: p Путешествие#[br]на завод Italtherm
+
+
+            .production__video.video-block(data-video="https://youtu.be/rIXIx1hlcj0")
+
+

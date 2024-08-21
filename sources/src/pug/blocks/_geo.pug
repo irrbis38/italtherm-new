@@ -1,0 +1,44 @@
+.geo.section
+    .geo__top
+        .container
+            h2.geo__title.section__title География присутствия продукции Italtherm в мире
+
+
+    .geo__map
+        .container
+            .geo__img
+                //- img(src="./images/geo/map.svg", alt="Карта присутствия продукции Italtherm в мире" loading="lazy" decoding="async" width="1500" height="905")
+
+                picture(class="picture object-fit-cover")
+                    source(class="object-fit-cover" srcset= "./images/geo/map.webp, ./images/geo/map@2x.webp 2x" type="image/webp")
+                    img(class="picture__img object-fit-cover" src= "./images/geo/map.jpg" srcset= "./images/geo/map.jpg, ./images/geo/map@2x.jpg 2x" alt="Карта присутствия продукции Italtherm в мире" width="1500" height="905" decoding="async" loading="lazy")
+
+
+    .geo__bottom
+        .container
+            a.geo__link(href="https://market.yandex.ru/product--kotel-gazovyi-italtherm-city-class-25-f-25-7-kvt-nastennyi/1780669095/reviews?sku=1936783373&uniqueId=8638564&do-waremd5=HYp_EpYuD-NAiqdvgJ3K5A" target="_blank")
+                span.geo__icon
+                    img(src="./images/geo/yandex.svg", alt="Логотип Яндекс Маркет" width="97" height="97" loading="lazy" decoding="async")
+                span.geo__descr 
+                    span.geo__name Яндекс Маркет
+                    span.geo__rating
+            a.geo__link(href="https://www.ozon.ru/product/nastennyy-gazovyy-dvuhkonturnyy-kotel-italtherm-italterm-city-class-25-f-762772749/reviews/" target="_blank")
+                span.geo__icon
+                    img(src="./images/geo/ozon.svg", alt="Логотип Озон" width="97" height="97" loading="lazy" decoding="async")
+                span.geo__descr 
+                    span.geo__name Ozon
+                    span.geo__rating
+            a.geo__link(href="https://otzovik.com/reviews/gazoviy_kotel_italtherm_city_class_25_f/" target="_blank")
+                span.geo__icon
+                    img(src="./images/geo/otzovik.svg", alt="Логотип Отзовик" width="97" height="97" loading="lazy" decoding="async")
+                span.geo__descr 
+                    span.geo__name Отзовик
+                    span.geo__rating
+            a.geo__link(href="https://megamarket.ru/catalog/details/nastennyy-gazovyy-kotel-italtherm-city-class-25-f-100042826935/otzyvy/#?details_block=reviews" target="_blank")
+                span.geo__icon
+                    img(src="./images/geo/sber_mega_market.svg", alt="Логотип СберМегаМаркет" width="97" height="97" loading="lazy" decoding="async")
+                span.geo__descr 
+                    span.geo__name СберМегаМаркет
+                    span.geo__rating
+
+        

@@ -1,0 +1,31 @@
+.section {
+    margin-bottom: 190px;
+
+    @include md {
+        margin-bottom: 120px;
+    }
+
+    @include xs {
+        margin-bottom: 90px;
+    }
+}
+
+.section__title {
+    margin: 0 0 44px 0;
+    font-weight: 600;
+    font-size: 75px;
+    line-height: 116%;
+
+    @include md {
+        font-size: 50px;
+    }
+
+    @include xs {
+        margin-bottom: 35px;
+        font-size: 35px;
+    }
+
+    @include r(370px) {
+        font-size: 30px;
+    }
+}

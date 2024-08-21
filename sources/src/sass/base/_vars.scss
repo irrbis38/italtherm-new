@@ -1,0 +1,26 @@
+:root {
+    // colors
+    --color-dark: #090909;
+    --color-green: #41a62b;
+    --color-green-bg: #40a22b;
+    --color-white: #fff;
+    --color-white-fc: #fcfcfc;
+    --color-white-fb: #fbfbfb;
+    --color-grey: #a1a1a1;
+    --color-grey-13: #131313;
+    --color-red: #f32a2a;
+}
+
+// fonts
+
+$font_main: "Grtsk Peta", sans-serif;
+
+// gradients
+
+$gradient_bg: linear-gradient(
+    90deg,
+    #194011 0.26%,
+    #40a32a 48.7%,
+    #194011 100%
+);
+$gradient_btn: linear-gradient(90deg, #41a62b 37.76%, #194011 100%);

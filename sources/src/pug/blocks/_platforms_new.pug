@@ -1,0 +1,54 @@
+section.platforms.section 
+    .container 
+        h2.platforms__title.section__title Наши онлайн-площадки
+
+        .platforms__wrapper 
+
+            -
+                var platforms_data = [
+                    {
+                        name: 'YouTube-канал',
+                        img: 'platforms-1',
+                        width: '740',
+                        remarks: '',
+                        color: 'white',
+                        href: 'https://www.youtube.com/@ItalthermRU'
+                    },
+                    {
+                        name: 'Telegram-канал',
+                        img: 'platforms-2',
+                        width: '740',
+                        remarks: '',
+                        color: 'dark',
+                        href: 'https://t.me/italtherm_ru'
+                    },
+                    {
+                        name: 'Сообщество в ВК',
+                        img: 'platforms-4',
+                        width: '740',
+                        remarks: '',
+                        color: 'dark',
+                        href: 'https://vk.com/italtherm'
+                    },
+                    {
+                        name: 'Яндекс Дзен',
+                        img: 'platforms-5',
+                        width: '740',
+                        remarks: '',
+                        color: 'white',
+                        href: 'https://dzen.ru/italtherm'
+                    }
+                ]
+            
+            each item in platforms_data
+
+                a.platforms__link(href= item.href class=(item.width === "1500" ? 'platforms__link--wide' : 'platforms__link--small') target="_blank")
+                    picture(class="picture object-fit-cover")
+                        source(class="object-fit-cover" media="(min-width:768px)" srcset= "./images/platforms/" + item.img + ".webp, ./images/platforms/" + item.img + "@2x.webp 2x" type="image/webp"  width= item.width height="439")
+                        source(class="object-fit-cover" media="(max-width:767px)" srcset= "./images/platforms/" + item.img + "-mob.webp, ./images/platforms/" + item.img + "-mob@2x.webp 2x" type="image/webp"  width="350" height="207")
+                        img(class="picture__img object-fit-cover" src= "./images/platforms/" + item.img + ".jpg" srcset= "./images/platforms/" + item.img + ".jpg, ./images/platforms/" + item.img + "@2x.jpg 2x" alt="" width= item.width height="439" decoding="async" loading="lazy")
+
+                    span.platforms__name(class=(item.color === 'dark' && 'platforms__name--dark'))= item.name
+
+                    if item.remarks
+                        span.platforms__remarks= item.remarks
