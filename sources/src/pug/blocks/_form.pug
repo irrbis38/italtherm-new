@@ -4,11 +4,11 @@
 
         p.form__subtitle Оставьте заявку на бесплатную консультацию
 
-        form.form__form(action="#" novalidate)
+        form.form__form.js-form(action="#" novalidate)
 
-            input.form__input(type="text" name="user_name" placeholder="Имя")
+            input.form__input.js-input(type="text" name="user_name" placeholder="Имя")
 
-            input.form__input(type="text" name="user_phone" placeholder="+7 (___) ___-__-__" data-maska="+7 (###) ###-##-##" required)
+            input.form__input.js-input(type="text" name="user_phone" placeholder="+7 (___) ___-__-__" data-maska="+7 (###) ###-##-##" required)
 
             button.form__submit(type="submit") Получить консультацию
 

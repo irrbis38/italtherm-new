@@ -95,26 +95,28 @@ var checkErorrs = (formElements) => {
 };
 
 var initFormValidation = (feedback) => {
-    var form = document.querySelector(".feedback__form");
+    var forms = document.querySelectorAll(".js-form");
 
-    if (!form) return;
+    if (forms.length < 0) return;
 
-    var inputs = Array.from(form.querySelectorAll(".feedback__input"));
+    forms.forEach((form) => {
+        var inputs = Array.from(form.querySelectorAll(".js-input"));
 
-    inputs.length > 0 && initInputCheck(inputs);
+        inputs.length > 0 && initInputCheck(inputs);
 
-    form.addEventListener("submit", (e) => {
-        e.preventDefault();
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
 
-        doFormValidation(inputs);
+            doFormValidation(inputs);
 
-        var checkResult = checkErorrs(inputs);
+            var checkResult = checkErorrs(inputs);
 
-        if (checkResult) {
-            form.reset();
+            if (checkResult) {
+                form.reset();
 
-            feedback.classList.add("success");
-        }
+                feedback.classList.add("success");
+            }
+        });
     });
 };
 
@@ -151,6 +153,59 @@ var initTopSlider = () => {
     });
 };
 
+var initToggleSteps = () => {
+    var tabs = document.querySelectorAll(".quiz__tab");
+    var quizTabs = document.querySelectorAll(".js-quiz-tab");
+
+    if (quizTabs.length < 1) return;
+
+    quizTabs.forEach((tab) => {
+        var inputs = Array.from(tab.querySelectorAll(".quiz__input"));
+        var goToNextBtn = tab.querySelector(".quiz__next");
+
+        inputs.forEach((input) => {
+            input.addEventListener("input", () => {
+                if (inputs.some((i) => i.checked)) {
+                    goToNextBtn.disabled = false;
+                } else {
+                    goToNextBtn.disabled = true;
+                }
+            });
+        });
+
+        goToNextBtn.addEventListener("click", () => {
+            tab.classList.remove("active");
+            tab.nextElementSibling.classList.add("active");
+        });
+    });
+
+    var form = document.querySelector(".js-quiz-form");
+
+    var inputs = Array.from(form.querySelectorAll(".js-input"));
+
+    inputs.length > 0 && initInputCheck(inputs);
+
+    form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        doFormValidation(inputs);
+
+        var checkResult = checkErorrs(inputs);
+
+        if (checkResult) {
+            form.reset();
+
+            feedback.classList.add("success");
+
+            tabs.forEach((t) =>
+                t.classList.contains("quiz__tab--first")
+                    ? t.classList.add("active")
+                    : t.classList.remove("active")
+            );
+        }
+    });
+};
+
 document.addEventListener("DOMContentLoaded", () => {
     // get all video elements on the page
     var videos = Array.from(document.querySelectorAll(".video-block"));
@@ -167,4 +222,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // init slider
     initTopSlider();
+
+    // init toggle steps
+    initToggleSteps();
 });

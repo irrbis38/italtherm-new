@@ -2,6 +2,127 @@ section.quiz
     .container
         h2.quiz__title Ответьте на 4 вопроса и получите подбор #[span оптимального котла с уникальной гарантией 7 лет]
 
-        .quiz__wrapper 
-            img(src="./images/lid.png", alt="")
+        form.quiz__form.js-quiz-form(action="#" novalidate)
+
+            .quiz__boilers
+                +pictureSize('quiz/boilers', 'png', 'x2', 847, 873, 'Котлы')
+
+            .quiz__tab.quiz__tab--first.js-quiz-tab.active
+
+                span.quiz__num Вопрос 1 из 4
+
+                p.quiz__name Котел необходим для отопления какого объекта?
+
+                .quiz__inputs 
+
+                    label.quiz__label
+                        input.quiz__input(type="radio" name="object" value="house")
+                        span.quiz__fake  Частного дома
+
+                    label.quiz__label
+                        input.quiz__input(type="radio" name="object" value="commercial")
+                        span.quiz__fake Коммерческого помещения
+
+                    label.quiz__label
+                        input.quiz__input(type="radio" name="object" value="government")
+                        span.quiz__fake Государственного объекта
+
+                    label.quiz__label
+                        input.quiz__input(type="radio" name="object" value="another")
+                        span.quiz__fake Иной вариант
+
+                button.quiz__next(type="button" aria-label="Перейти" disabled) Далее
+
+
+            .quiz__tab.js-quiz-tab
+
+                span.quiz__num Вопрос 2 из 4
+
+                p.quiz__name Укажите примерную площадь вашего объекта
+
+                .quiz__inputs 
+
+                    label.quiz__label
+                        input.quiz__input(type="radio" name="area" value="100m<")
+                        span.quiz__fake  До 100 м²
+
+                    label.quiz__label
+                        input.quiz__input(type="radio" name="area" value="100-200m")
+                        span.quiz__fake От 100 до 200 м²
+
+                    label.quiz__label
+                        input.quiz__input(type="radio" name="area" value="200-300")
+                        span.quiz__fake От 200 до 300 м²
+
+                    label.quiz__label
+                        input.quiz__input(type="radio" name="area" value="300>")
+                        span.quiz__fake Более 300 м²
+
+                button.quiz__next(type="button" aria-label="Перейти" disabled) Далее
+
+
+            .quiz__tab.js-quiz-tab
+
+                span.quiz__num Вопрос 3 из 4
+
+                p.quiz__name Необходима функция нагрева горячей воды?
+
+                .quiz__inputs 
+
+                    label.quiz__label
+                        input.quiz__input(type="radio" name="hot-water" value="yes")
+                        span.quiz__fake  Да, нужна
+
+                    label.quiz__label
+                        input.quiz__input(type="radio" name="hot-water" value="no")
+                        span.quiz__fake Нет, не нужна
+
+                    label.quiz__label
+                        input.quiz__input(type="radio" name="hot-water" value="dunno")
+                        span.quiz__fake Пока не знаю
+
+                button.quiz__next(type="button" aria-label="Перейти" disabled) Далее
+
+
+            .quiz__tab.js-quiz-tab
+
+                span.quiz__num Вопрос 4 из 4
+
+                p.quiz__name Должна присутствовать функция удаленного управления?
+
+                .quiz__inputs 
+
+                    label.quiz__label
+                        input.quiz__input(type="radio" name="remote" value="yes")
+                        span.quiz__fake  Да, нужна
+
+                    label.quiz__label
+                        input.quiz__input(type="radio" name="remote" value="no")
+                        span.quiz__fake Нет, не нужна
+
+                    label.quiz__label
+                        input.quiz__input(type="radio" name="remote" value="dunno")
+                        span.quiz__fake Пока не знаю
+
+                button.quiz__next(type="button" aria-label="Перейти" disabled) Далее
+
+
+            .quiz__tab
+
+                span.quiz__num.quiz__num--last Расчет успешно пройден!
+
+                p.quiz__heading Оставьте свои контактные данные #[br.remove_sm]и получите подбор #[span оптимального котла с уникальной гарантией 7 лет]
+
+                .quiz__form_feedback
+
+                    input.quiz__form_input.js-input(type="text" name="user_name" placeholder="Имя")
+
+                    input.quiz__form_input.js-input(type="text" name="user_phone" placeholder="+7 (___) ___-__-__" data-maska="+7 (###) ###-##-##" required)
+
+                button.quiz__form_submit(type="submit") Получить консультацию
+
+                p.quiz__form_policy Нажав на кнопку, вы даете согласие на обработку #[button.quiz__form_show.show-policy персональных данных]
+
+
+
 

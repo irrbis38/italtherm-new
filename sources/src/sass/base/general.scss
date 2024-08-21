@@ -29,3 +29,8 @@
         font-size: 30px;
     }
 }
+
+.js-input.error {
+    color: var(--color-red, #f32a2a);
+    border-color: var(--color-red, #f32a2a);
+}
