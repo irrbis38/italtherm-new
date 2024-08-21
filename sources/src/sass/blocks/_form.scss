@@ -1,6 +1,7 @@
 .form {
     position: relative;
     z-index: 2;
+    margin-bottom: 22px;
     padding: 44px 91px 60px;
     background-color: var(--color-green-bg, #40a22b);
     background: $gradient_bg;
@@ -28,6 +29,7 @@
     }
 
     @include sm {
+        margin-bottom: 42px;
         transform: translateY(-5%);
     }
 

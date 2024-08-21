@@ -1,0 +1,49 @@
+.quiz {
+    margin-bottom: 110px;
+
+    @include xl {
+        margin-bottom: 120px;
+    }
+
+    @include xs {
+        margin-bottom: 90px;
+    }
+}
+
+.quiz__title {
+    margin-bottom: 51px;
+    font-weight: 600;
+    font-size: 55px;
+    line-height: 116%;
+    text-align: center;
+    color: var(--color-black, #090909);
+
+    span {
+        display: block;
+        width: 100%;
+        font-weight: 400;
+    }
+
+    @include xl {
+        font-size: 50px;
+    }
+
+    @include lg {
+        margin-bottom: 41px;
+        font-size: 40px;
+    }
+
+    @include xs {
+        margin-bottom: 31px;
+        font-size: 28px;
+        text-align: left;
+    }
+}
+
+.quiz__wrapper {
+    img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+}
