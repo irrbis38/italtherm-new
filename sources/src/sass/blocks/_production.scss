@@ -8,6 +8,12 @@
     }
 }
 
+.production__title {
+    @include xs {
+        margin-bottom: 30px;
+    }
+}
+
 .production__wrapper {
     position: relative;
     overflow: hidden;

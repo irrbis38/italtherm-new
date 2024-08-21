@@ -52,10 +52,17 @@
     letter-spacing: 0.03em;
     text-align: right;
     color: var(--color-white-fc, #fcfcfc);
+    transition: color 0.2s ease-out;
 
     @include xs {
         font-size: 16px;
         text-align: center;
+    }
+
+    @media (hover: hover) {
+        &:hover {
+            color: #51c038;
+        }
     }
 }
 
@@ -67,6 +74,13 @@
     text-align: right;
     color: var(--color-white-fc, #fcfcfc);
     text-decoration: none;
+    transition: color 0.2s ease-out;
+
+    @media (hover: hover) {
+        &:hover {
+            color: #51c038;
+        }
+    }
 
     @include xs {
         font-size: 23px;

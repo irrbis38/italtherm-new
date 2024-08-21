@@ -1,0 +1,63 @@
+-
+    const boilersList = [
+        {
+            picture: 'top/boiler-1',
+            name: 'Котел газовый CITY CLASS 24 C',
+            price: '81 000 ₽',
+        },
+        {
+            picture: 'top/boiler-1',
+            name: 'Котел газовый CITY CLASS 25 F',
+            price: '83 800 ₽',
+        },
+        {
+            picture: 'top/boiler-1',
+            name: 'Котел газовый CITY CLASS 30 FR',
+            price: '93 800 ₽',
+        },
+        {
+            picture: 'top/boiler-1',
+            name: 'Котел газовый CITY CLASS 35 FR',
+            price: '109 100 ₽',
+        },
+        {
+            picture: 'top/boiler-1',
+            name: 'Котел газовый CITY CLASS 40 FR',
+            price: '119 100 ₽',
+        },
+    ]
+
+.top.section
+    .container
+        h2.top__title ТОП-5 продаваемых #[br]газовых котлов Italtherm
+
+        .top__wrapper
+
+            .top__nav 
+
+                button.top__prev(type="button" aria-label="Показать предыдущий слайд")
+                    svg(width="9" height="16" viewBox="0 0 9 16" fill="none" xmlns="http://www.w3.org/2000/svg")
+                        path(d="M7.56836 14.2257L1.14583 7.93159L7.56836 1.38061" stroke="white" stroke-width="1.604" stroke-linecap="round" stroke-linejoin="round")
+
+                button.top__next(type="button" aria-label="Показать следующий слайд")
+                    svg(width="9" height="15" viewBox="0 0 9 15" fill="none" xmlns="http://www.w3.org/2000/svg")
+                        path(d="M1.43213 1.27091L7.85466 7.56499L1.43213 14.116" stroke="white" stroke-width="1.604" stroke-linecap="round" stroke-linejoin="round")
+
+            .top__slider.swiper
+
+                .swiper-wrapper
+
+                    each item in boilersList
+
+                        article.top__slide.swiper-slide
+
+                            .top__picture 
+                                +pictureSize(item.picture, 'jpg', 'x2', 242, 366, 'Фото котла')
+
+                            h3.top__name= item.name
+
+                            p.top__price= item.price
+
+
+
+

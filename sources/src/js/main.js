@@ -3,24 +3,17 @@
 // ========== INIT VIDEO
 
 var initYoutubeVideo = (videos) => {
-    // generate video url
-    var generateUrl = (id) => {
-        var query = "?rel=0&showinfo=0&autoplay=1";
-        // var query = "?ps=docs&controls=1";
-        return "https://www.youtube.com/embed/" + id + query;
-    };
-
     // create iframe element
     var createIframe = (id) => {
         var iframe = document.createElement("iframe");
         iframe.classList.add("video-iframe");
-        iframe.setAttribute("src", generateUrl(id));
+        iframe.setAttribute("src", id);
         iframe.setAttribute("title", "YouTube video player");
         iframe.setAttribute("frameborder", "0");
         iframe.setAttribute("allowfullscreen", "");
         iframe.setAttribute(
             "allow",
-            "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;"
+            "autoplay; fullscreen; accelerometer; gyroscope; picture-in-picture; encrypted-media"
         );
 
         return iframe;
@@ -29,16 +22,13 @@ var initYoutubeVideo = (videos) => {
     // handling each video element
     videos.forEach((el) => {
         var videoHref = el.dataset.video;
-        var deletedLength = "https://youtu.be/".length;
-
-        var videoId = videoHref.substring(deletedLength, videoHref.length);
 
         var parent = el.parentElement;
 
         var videoPlayBtn = parent.querySelector(".video-play-btn");
 
         videoPlayBtn.addEventListener("click", () => {
-            var iframe = createIframe(videoId);
+            var iframe = createIframe(videoHref);
             parent.querySelector(".video-preview").remove();
             el.append(iframe);
         });
@@ -140,6 +130,27 @@ var addMask = () => {
     maskedInput && initMaskaInput();
 };
 
+var initTopSlider = () => {
+    new Swiper(".top__slider", {
+        slidesPerView: 1,
+        spaceBetween: 10,
+        navigation: {
+            prevEl: ".top__prev",
+            nextEl: ".top__next",
+        },
+        breakpoints: {
+            576: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+            },
+            992: {
+                slidesPerView: 3,
+                spaceBetween: 40,
+            },
+        },
+    });
+};
+
 document.addEventListener("DOMContentLoaded", () => {
     // get all video elements on the page
     var videos = Array.from(document.querySelectorAll(".video-block"));
@@ -153,4 +164,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // init mask
     addMask();
+
+    // init slider
+    initTopSlider();
 });
