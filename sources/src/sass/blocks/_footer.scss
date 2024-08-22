@@ -1,4 +1,6 @@
 .footer {
+    position: relative;
+    z-index: 2;
     color: var(--color-white-fc, #fcfcfc);
     background: #1c1c1c url("../images/footer-bg.jpg") center / cover no-repeat;
 
