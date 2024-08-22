@@ -34,3 +34,10 @@
     color: var(--color-red, #f32a2a);
     border-color: var(--color-red, #f32a2a);
 }
+
+.js-input {
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-radius: 0;
+}

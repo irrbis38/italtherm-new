@@ -5,6 +5,7 @@
     background: $gradient_bg;
     color: var(--color-white-fc, #fcfcfc);
     overflow: hidden;
+    transform: translateY(1px);
 
     input,
     button {
