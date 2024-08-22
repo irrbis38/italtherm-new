@@ -657,6 +657,12 @@ template {
   color: var(--color-red,#f32a2a);
   border-color: var(--color-red,#f32a2a)
 }
+.js-input {
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-radius: 0
+}
 *,
 ::after,
 ::before {
@@ -1260,7 +1266,7 @@ body.lock {
 }
 @media (max-width:991px) {
   .quiz__boilers {
-    bottom: -7%;
+    bottom: -9%;
     right: 50%;
     width: 60%;
     -webkit-transform: translateX(50%);
@@ -1270,13 +1276,24 @@ body.lock {
 @media (max-width:767px) {
   .quiz__boilers {
     width: 100%;
-    bottom: -8.7%
+    bottom: -11%
   }
 }
 @media (max-width:575px) {
   .quiz__boilers {
     bottom: -5.7%;
+    bottom: -90px;
     width: 134%
+  }
+}
+@media only screen and (max-width:450px) {
+  .quiz__boilers {
+    bottom: -70px
+  }
+}
+@media only screen and (max-width:400px) {
+  .quiz__boilers {
+    bottom: -60px
   }
 }
 .quiz__tab {
@@ -2228,7 +2245,9 @@ button.quiz__next:disabled {
   background-color: var(--color-green-bg,#40a22b);
   background: linear-gradient(90deg,#194011 .26%,#40a32a 48.7%,#194011 100%);
   color: var(--color-white-fc,#fcfcfc);
-  overflow: hidden
+  overflow: hidden;
+  -webkit-transform: translateY(1px);
+  transform: translateY(1px)
 }
 .feedback button,
 .feedback input {
