@@ -2070,6 +2070,51 @@ button.quiz__next:disabled {
     font-size: 35px
   }
 }
+.top__line {
+  margin-bottom: 45px;
+  padding: 24px 0 38px;
+  background: var(--color-green-bg,#40a22b) linear-gradient(90deg,#194011 .26%,#40a32a 48.7%,#194011 100%)
+}
+.top__line p {
+  margin: 0;
+  padding: 0;
+  font-weight: 600;
+  font-size: 75px;
+  line-height: 116%;
+  text-align: center;
+  color: #fff
+}
+@media (max-width:1300px) {
+  .top__line {
+    margin-bottom: 35px
+  }
+  .top__line p {
+    font-size: 50px
+  }
+}
+@media (max-width:991px) {
+  .top__line p {
+    font-size: 40px
+  }
+}
+@media (max-width:767px) {
+  .top__line {
+    margin-bottom: 28px;
+    padding: 20px 0
+  }
+  .top__line p {
+    font-size: 35px
+  }
+}
+@media (max-width:575px) {
+  .top__line {
+    padding: 15px 0 10px
+  }
+  .top__line p {
+    max-width: 320px;
+    text-align: left
+  }
+}
 .top__wrapper {
   position: relative;
   padding: 0 64px
