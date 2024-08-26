@@ -28,6 +28,55 @@
     }
 }
 
+.top__line {
+    margin-bottom: 45px;
+    padding: 24px 0 38px;
+    background: var(--color-green-bg, #40a22b)
+        linear-gradient(90deg, #194011 0.26%, #40a32a 48.7%, #194011 100%);
+
+    p {
+        margin: 0;
+        padding: 0;
+        font-weight: 600;
+        font-size: 75px;
+        line-height: 116%;
+        text-align: center;
+        color: #fff;
+    }
+
+    @include lg {
+        margin-bottom: 35px;
+
+        p {
+            font-size: 50px;
+        }
+    }
+
+    @include sm {
+        p {
+            font-size: 40px;
+        }
+    }
+
+    @include xs {
+        margin-bottom: 28px;
+        padding: 20px 0;
+
+        p {
+            font-size: 35px;
+        }
+    }
+
+    @include xxs {
+        padding: 15px 0 10px;
+
+        p {
+            max-width: 320px;
+            text-align: left;
+        }
+    }
+}
+
 .top__wrapper {
     position: relative;
     padding: 0 64px;
